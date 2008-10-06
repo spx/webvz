@@ -13,7 +13,7 @@
 			 <%= text_field "conf", "HOSTNAME" %>
 		<% end %>
 	</td>
-        <td> <%= submit_tag "Edit"%> </td>
+        <td> <%= submit_tag "Save"%> </td>
 <% end %>
 </tr>
 
@@ -29,7 +29,7 @@
 			<% for address in addresses %>
 				<tr> 
 					<td> <%= address.gsub("\"", "") %> </td> 
-					<td> <%= link_to "delete", {:action => :delete_ip, :ip => address.gsub("\"", ""), :vps_id => @vps_id}, :confirm => "Are you sure?", :method => :post %> </td> 
+					<td> <%= link_to image_tag('delete.png', :title => 'Remove IP'), {:action => :delete_ip, :ip => address.gsub("\"", ""), :vps_id => @vps_id}, :confirm => "Are you sure?", :method => :post %> </td> 
 				</tr>	
 			<% end %>
 			<tr>
@@ -54,24 +54,29 @@
 
 <br>
 
-<table>
-<tr>
-        <td> Nameserver </td> <td> : </td> 
-	<td> 
-		<% unless @conf_file["NAMESERVER"].blank? %>
-			<% form_tag  :action => "edit_nameserver", :vps_id => @vps_id do %>
-				<td> <%= text_field "conf", "NAMESERVER", :value => @conf_file["NAMESERVER"].gsub("\"", "")  %>
-				<%= submit_tag "edit nameserver" %>
-				</td>
-			<% end %>
-		<% else %>
-			 <% form_tag  :action => "edit_nameserver", :vps_id => @vps_id do %>
-                                <td> <%= text_field "conf", "NAMESERVER" %>
-                                <%= submit_tag "edit nameserver" %>
-                                </td>
-			<% end %>
-		<% end %>
-	</td>
-</tr>
-</table>
+  <div>Name Servers</div>
+  <div>
+  	<% form_tag  :action => "edit_nameserver", :vps_id => @vps_id do %>
+  		<%= text_area "conf", "NAMESERVER", 
+  		  :value => (@conf_file["NAMESERVER"].gsub("\"", "").gsub(/\s+/, "\n") rescue ''),
+  		  :rows => '5',
+  		  :cols => '30'
+  		%>
+  		<br/>
+  		<%= submit_tag "Set Name Servers" %>
+  	<% end %>
+  </div>
+
+  <div>Search Domains</div>
+  <div>
+  	<% form_tag  :action => "edit_search_domain", :vps_id => @vps_id do %>
+  		<%= text_area "conf", "SEARCHDOMAIN", 
+  		  :value => (@conf_file["SEARCHDOMAIN"].gsub("\"", "").gsub(/\s+/, "\n") rescue ''),
+  		  :rows => '5',
+  		  :cols => '30'
+  		%>
+  		<br/>
+  		<%= submit_tag "Set Search Domains" %>
+  	<% end %>
+  </div>
 </div>

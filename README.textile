@@ -1,4 +1,4 @@
-h1.  WebVZ: OpenVZ Web Management Tool
+h1. WebVZ: OpenVZ Web Management Tool
 
 h2. WebVZ 2.0 Features
 

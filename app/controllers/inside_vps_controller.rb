@@ -105,10 +105,18 @@ class InsideVpsController < ApplicationController
 	end
 
 	def edit_nameserver
+	  servers = @conf[:NAMESERVER].split(/\s+/).collect {|server| "--nameserver #{server} "}
 		output = ""
-                output += `vzctl set #{@vps_id} --nameserver #{@conf[:NAMESERVER]} --save`
-                write_conf(output, 'basic_net')
-	end
+    output += `vzctl set #{@vps_id} #{servers} --save`
+    write_conf(output, 'basic_net')
+  end
+
+	def edit_search_domain
+	  servers = @conf[:SEARCHDOMAIN].split(/\s+/).collect {|server| "--searchdomain #{server} "}
+		output = ""
+    output += `vzctl set #{@vps_id} #{servers} --save`
+    write_conf(output, 'basic_net')
+  end
 
 	def edit_adv_net
 		output = ""
