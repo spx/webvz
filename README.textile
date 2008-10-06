@@ -1,0 +1,43 @@
+h1.  WebVZ: OpenVZ Web Management Tool
+
+h2. WebVZ 2.0 Features
+
+# Create containers.
+# Start, Stop, Restart, and Destroy containers.
+# Migrate containers from Host Node to another Host Node.
+# Create and Manage configuration files.
+# Change the configuration of the containers on the fly.
+# Start, Stop, and Restart OpenVZ service.
+# Execute Commands inside the running containers and display the output on the same page.
+# list the stopped containers, the running containers and/or all of them.
+# Assign a name for each container.
+# User Accesss Module.
+# Add/delete multiple IP Addresses
+# Monitor container's resources (user_beancounter) and highlight the over used resource.
+# Assign root password.
+# Enable/Disable booting of the container.
+# Manage Operating System Templates (delete, download and copy).
+# Recreate a customized OS-Template from an existing container.
+# Copy OS-Template from a machine to another
+# Backup all containers
+# Backup all client's containers
+# Backup a specific container
+# restore containers
+# Access Control Level
+# Client can stop, start and restart his/her container
+# Client can run commands, observe, and monitor the containers
+# Ownership of containers
+# admin and client users
+# Security enforcement on who access what
+
+Developer: Shuaib Zahda from Palestine
+Email: "shuaib.zahda@gmail.com":shuaib.zahda@gmail.com
+Email: "webvz.info@gmail.com":webvz.info@gmail.com
+"http://webvz.sourceforge.net/":WebVZ Official website
+"http://groups.google.com/group/webvz":WebVZ Google Group
+
+The containers' logos were borrowed from EasyVZ.
+
+Special Thanks to Leila Daniel from Quantum Beez Sdn Bhd for the logo.
+
+All Rights Reserved © Shuaib Zahda 2008
