@@ -2,7 +2,15 @@
 <h3> You have <%= pluralize(@rows.size, "#{@status} container") %> </h3>
 
 <table>
-<th> Distro</th> <th> Cnt ID </th> <th> Name </th> <th> No. Ps </th> <th> Status </th> <th> IP Address </th> <th> Hostname </th> <th> Owner </th>
+  <th> Distro</th> 
+  <th> VE ID </th> 
+  <th> Name </th> 
+  <th> No. Ps </th> 
+  <th> Status </th> 
+  <th> IP Address </th> 
+  <th> Hostname </th> 
+  <th> Owner </th>
+  <th>Actions</th>
 <% i = 1 %>
 <% z = 0 %>
 <% for row in @rows -%>
@@ -24,27 +32,22 @@
 			<%= link_to "Assign to Owner", :action => :assign_to_owner, :vps_id =>row[0] %> 
 		<% end %>
 	</td> 
-
-	</tr>
-	
-	<tr id="<%= "color"+i.to_s %>">
-	<td> </td>
-	<td> </td>
-	<td> </td>
-	<% if row[2].include?("running") %>
-		<td><%= link_to "stop", :action => :stop_vps, :vps_id => row[0] %></td>
-		<td> <%= link_to "restart" , :action => :restart_vps, :vps_id => row[0] %> </td> 
-	<% else %>
-		<td> <%= link_to "start", :action => :start_vps, :vps_id => row[0] %> </td>
-		<% if session[:permission] == "admin" %>
-			<td> <%= link_to "destroy", {:action => :destroy_vps, :vps_id => row[0]}, :confirm => "Are you sure?", :method => :post %> </td>
-		<% end %>
-	<% end %>
-		<% if session[:permission] == "admin" %>
-			<td> <%= link_to "migrate", :action => :migrate_vps, :vps_id => row[0] %> </td>
-			<td> <%= link_to "create backup", :action => :create_backup, :vps_id => row[0] %> </td>
-		<% end %>
-	<td>  <%= link_to "Change Owner", :action => :assign_to_owner, :vps_id =>row[0] %> </td>
+  <td>
+  	<% if row[2].include?("running") %>
+  		<%= link_to image_tag('stop.png', :title => 'Stop'), :action => :stop_vps, :vps_id => row[0] %>
+  		<%= link_to image_tag('restart.png', :title => 'Restart'), :action => :restart_vps, :vps_id => row[0] %>
+  	<% else %>
+  		<%= link_to image_tag('start.png', :title => 'Start'), :action => :start_vps, :vps_id => row[0] %>
+  		<% if session[:permission] == "admin" %>
+  			<%= link_to image_tag('delete.png', :title => 'Destroy'), {:action => :destroy_vps, :vps_id => row[0]}, :confirm => "Are you sure?", :method => :post %>
+  		<% end %>
+  	<% end %>
+  		<% if session[:permission] == "admin" %>
+  			<%= link_to image_tag('world.png', :title => 'Migrate'), :action => :migrate_vps, :vps_id => row[0] %>
+  			<%= link_to image_tag('save.png', :title => 'Backup'), :action => :create_backup, :vps_id => row[0] %>
+  		<% end %>
+  	<%= link_to image_tag('user.png', :title => 'Change Owner'), :action => :assign_to_owner, :vps_id =>row[0] %>
+  </td>
 	</tr>
 <% end -%>
 
