@@ -9,19 +9,19 @@
 		<td> <%= service %> </td>
 		 <%  out = `vzctl exec #{@vps_id} /etc/init.d/#{service} status` %>  
 		<td> <%= out %> </td> 
-		<td> 
+		<td><nobr> 
 			<% if out.include?('is running') %>
 				<%= link_to image_tag('stop.png', :title => 'Stop'), :action => :stop_service, :vps_id => @vps_id, :ser_name => service %> 
-				| <%= link_to image_tag('restart.png', :title => 'Restart'), :action => :start_service, :vps_id => @vps_id, :ser_name => service %> </td>
+				<%= link_to image_tag('restart.png', :title => 'Restart'), :action => :start_service, :vps_id => @vps_id, :ser_name => service %>
 			<% elsif out.include?('is stopped') %>
-				<%= link_to image_tag('start.png', :title => 'Start'), :action => :start_service, :vps_id => @vps_id, :ser_name => service %> </td> 
-			
+				<%= link_to image_tag('start.png', :title => 'Start'), :action => :start_service, :vps_id => @vps_id, :ser_name => service %>
 			<% else %>
-				
 				<%= link_to image_tag('stop.png', :title => 'Stop'), :action => :stop_service, :vps_id => @vps_id, :ser_name => service %> 
-				| <%= link_to image_tag('restart.png', :title => 'Restart'), :action => :start_service, :vps_id => @vps_id, :ser_name => service %>				
-				| <%= link_to image_tag('start.png', :title => 'Start'), :action => :start_service, :vps_id => @vps_id, :ser_name => service %> </td> 
+				<%= link_to image_tag('restart.png', :title => 'Restart'), :action => :start_service, :vps_id => @vps_id, :ser_name => service %>				
+				<%= link_to image_tag('start.png', :title => 'Start'), :action => :start_service, :vps_id => @vps_id, :ser_name => service %>
 			<% end -%> 
+			</nobr>
+		</td>
 	</tr>
 	<% end -%>
 </table>
