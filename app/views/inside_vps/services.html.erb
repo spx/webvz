@@ -11,16 +11,16 @@
 		<td> <%= out %> </td> 
 		<td> 
 			<% if out.include?('is running') %>
-				<%= link_to "stop", :action => :stop_service, :vps_id => @vps_id, :ser_name => service %> 
-				| <%= link_to "restart", :action => :start_service, :vps_id => @vps_id, :ser_name => service %> </td>
+				<%= link_to image_tag('stop.png', :title => 'Stop'), :action => :stop_service, :vps_id => @vps_id, :ser_name => service %> 
+				| <%= link_to image_tag('restart.png', :title => 'Restart'), :action => :start_service, :vps_id => @vps_id, :ser_name => service %> </td>
 			<% elsif out.include?('is stopped') %>
-				<%= link_to "start", :action => :start_service, :vps_id => @vps_id, :ser_name => service %> </td> 
+				<%= link_to image_tag('start.png', :title => 'Start'), :action => :start_service, :vps_id => @vps_id, :ser_name => service %> </td> 
 			
 			<% else %>
 				
-				<%= link_to "stop", :action => :stop_service, :vps_id => @vps_id, :ser_name => service %> 
-				| <%= link_to "restart", :action => :start_service, :vps_id => @vps_id, :ser_name => service %>				
-				| <%= link_to "start", :action => :start_service, :vps_id => @vps_id, :ser_name => service %> </td> 
+				<%= link_to image_tag('stop.png', :title => 'Stop'), :action => :stop_service, :vps_id => @vps_id, :ser_name => service %> 
+				| <%= link_to image_tag('restart.png', :title => 'Restart'), :action => :start_service, :vps_id => @vps_id, :ser_name => service %>				
+				| <%= link_to image_tag('start.png', :title => 'Start'), :action => :start_service, :vps_id => @vps_id, :ser_name => service %> </td> 
 			<% end -%> 
 	</tr>
 	<% end -%>
