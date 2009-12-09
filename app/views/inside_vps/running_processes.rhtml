@@ -2,7 +2,7 @@
 <div id="details_block">
  
  <h3> Running Processes for <%= @vps_id %> </h3>
- <table border="1">
+ <table>
  <th> User </th> <th> PID </td> <th> %CPU </th> <th> %MEM </th> <th> VSZ </th> <th> RSS </th> <th> Stat </th> <th> Start </th> <th> Time </th> <th> Command </th>
  <% for entry in @procs -%>
  	<% values = entry.split(" ") %>

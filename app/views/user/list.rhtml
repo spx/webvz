@@ -1,12 +1,14 @@
 <%= render :partial => 'links' %>
-<h1>Listing users</h1>
+<h2>User list</h2>
 
-<table border="1">
+<table>
   <tr>
   <%# for column in User.content_columns %>
     <th>Name</th>
     <th>Username</th>
-    <th>Authority</th>
+    <th>Role</th>
+    <th></th>
+    <th></th>
   <%# end %>
   </tr>
   
@@ -16,8 +18,8 @@
    <td> <%= user.username %> </td>
    <td> <%= user.authority %> </td>
 
-    <td><%= link_to 'Edit', :action => 'edit', :id => user %></td>
-    <td><%= link_to 'Change Password', :action => 'change_password', :id => user %></td>
+    <td><%= button_to 'Edit', :action => 'edit', :id => user %></td>
+    <td><%= button_to 'Change Password', :action => 'change_password', :id => user %></td>
   </tr>
 <% end %>
 </table>

@@ -1,25 +1,18 @@
 <head>
-<title>WebVZ: OpenVZ Management Tool</title>
+<title>WebVZ: OpenVZ Management Tool @ <%= `hostname`  %>
+</title>
 <%= stylesheet_link_tag 'webvz' %>				
 </head>
 <body>
    	<div id="logo">
-                <%= link_to image_tag("webvz_small.jpg", :alt => "WebVZ logo", :width => "146", :height => "80", :border => "0"), :controller => :menu, :action => :index %>
+                <%= link_to image_tag("webvz_small.png", :alt => "WebVZ logo", :width => "146", :height => "80", :border => "0"), :controller => :menu, :action => :index %>
         </div>
         <div id="header">
-	<p> </p>
-                <h2> OpenVZ Management Tool </h2>
-		<p> 
-		Hostname: <i> <%= `hostname`  %> </i> | IP Address: <i> <%= `hostname -i`  %> </i>
-		</p>
+	
+                <h1> OpenVZ Management Tool </h1>
+		<!--Hostname: <i> <%= `hostname`  %> </i> | IP Address: <i> <%= `hostname -i`  %> </i>-->
+		
         </div>
-
-	<% if flash[:notice] %>
-        <div id="notice">
-                <p> <b> Notice </b> </p>
-                <p><%= flash[:notice].gsub("\n", "<br />") %> <p>
-        </div>
-	<% end -%>
 
 	<div id="tabsC">
 	<ul>
@@ -51,6 +44,14 @@
 	<div id="content">
 		<%= yield %> 
 	</div>
+
+
+	<% if flash[:notice] %>
+        <div id="notice">
+          <p><%= flash[:notice].gsub("\n", "<br />") %> <p>
+        </div>
+	<% end -%>
+
 
 	<div id="rights"> <p align="center"> All Rights Reserved &copy; Shuaib Zahda 2008</p> </div>
 

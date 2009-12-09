@@ -4,6 +4,7 @@
 		<li> <%= link_to "All Containers", :action => :list_vps, :status=> "all", :id => session[:user_id] %> </li>
 		<li> <%= link_to "Running Containers", :action => :list_vps, :status=> "running", :id => session[:user_id] %>  </li>
 		<li> <%= link_to "Stopped Containers", :action => :list_vps, :status=> "stopped", :id => session[:user_id] %> </li>
+		<li> <%= link_to "Backups", :action => :backups, :id => session[:user_id] %> </li>
 </ul>
 </div>
 </div>

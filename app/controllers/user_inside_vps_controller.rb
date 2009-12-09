@@ -81,9 +81,9 @@ class UserInsideVpsController < ApplicationController
                         flash[:notice] = "You have no privileges to access this area"
                         redirect_to :controller => :menu
 		end
-        end
+       end
 
 	def get_conf
                 @conf = params[:conf]
-        end
+    end
 end

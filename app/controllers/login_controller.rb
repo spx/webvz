@@ -20,7 +20,7 @@ class LoginController < ApplicationController
         session[:name] = user.name
 	session[:permission] = user.authority
         flash[:notice] = "You are logged in"
-        redirect_to :controller => :menu, :action => :index
+	redirect_to :controller => :menu, :action => :index
       else 
         flash[:notice] = "Invalid username/password"
       end

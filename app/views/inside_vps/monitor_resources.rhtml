@@ -2,7 +2,7 @@
 <div id="details_block">
 
 <h3> User Bean Counter for <%= @vps_id %> </h3>
-<table border="1">
+<table>
 <th> Resource </th> <th> Held </td> <th> Max held </th>  <th> Barrier </th> <th> Limit </th> <th> Failcnt </th>
 <% for entry in @ubc -%>
 	<% values = entry.split(" ") %>
