@@ -11,12 +11,11 @@ class ApplicationController < ActionController::Base
 #private methods
 #
 private
-  
 	def authorize
-    		unless User.find_by_id(session[:user_id])
-      			flash[:notice] = "Please log in"
-      			redirect_to(:controller => :login , :action => :sign_in)
-    		end
+		unless User.find_by_id(session[:user_id])
+			#flash[:notice] = "Please log in"
+			redirect_to(:controller => :login , :action => :sign_in)
+		end
 	end
 
 	def authorize_admin
@@ -27,47 +26,46 @@ private
 			redirect_to(:controller => :menu)
 			return false
 		end
-	end	
+	end
 	
 	def authorize_client
 		if session[:permission] == "client"
-                        return true
-                else
-                        flash[:notice] = "You do not have administration priviliges to access this fucntion."
-                        redirect_to(:controller => :menu)
-                        return false
-                end
-
+			return true
+		else
+			flash[:notice] = "You do not have administration priviliges to access this fucntion."
+			redirect_to(:controller => :menu)
+			return false
+		end
 	end
 
 	def is_vz_running
-                @output = `uname -r`
-                if File.exist?("/proc/vz")
+		@output = `uname -r`
+		if File.exist?("/proc/vz")
 		#if @output.include?("stab") || @output.include?("gc") || @output.include?("ovz") || @output.include?("openvz")
-                        @status = `/etc/init.d/vz status`
-                        unless @status.include?("running")
-                                flash[:notice] = "VZ service is not running."
-                                redirect_to :controller => :openvz, :action => :vz_status
-                        end
-                else
-                        flash[:notice] = "The kernel does not support OpenVZ."
-                        redirect_to :controller => :menu, :action => :index
-                end
-        end
- 
+			@status = `/etc/init.d/vz status`
+			unless @status.include?("running")
+				flash[:notice] = "VZ service is not running."
+				redirect_to :controller => :openvz, :action => :vz_status
+			end
+		else
+			flash[:notice] = "The kernel does not support OpenVZ."
+			redirect_to :controller => :menu, :action => :index
+		end
+	end
+
 	def get_vps_id
-                @vps_id = params[:vps_id]
-        end
+		@vps_id = params[:vps_id]
+	end
 
 	def get_conf_files_names
 		all_conf = `ls /etc/vz/conf/*.conf-sample`
-                names = all_conf.split("\n")
-                @conf_names = []
-                for file in names
-                        n = file.split("ve-")
-                        name = n[1].split(".conf-sample")
-                        @conf_names << name[0]
-                end
+		names = all_conf.split("\n")
+		@conf_names = []
+		for file in names
+			n = file.split("ve-")
+			name = n[1].split(".conf-sample")
+			@conf_names << name[0]
+		end
 		return @conf_names
 	end
 
@@ -79,7 +77,7 @@ private
 	end
 
 	def extract_vps_values(i, k)
-                array = i.split("\n")
+		array = i.split("\n")
 		array2 = k.split("\n") # to get the name of the container
 		@rows = []
 		@names = []
@@ -92,20 +90,19 @@ private
 		#extract other information like id, ip, hostname, etc
 		for row in array
 			r = row.split(" ")
-			#extract name of distro for the logo   
-                        r  << distro_name(r[0])
+			#extract name of distro for the logo
+			r << distro_name(r[0])
 			@rows << r
-                end
-                @rows
+		end
+		@rows
 	end
-	
-        def distro_name(vps_id)
-                first_line = ""
-                file = File.open("/vz/private/#{vps_id}/etc/issue")
-                file.each_line {|line| first_line = line; break }
-                file.close
-                x = first_line.split(" ")
-                dist_name = x[0]
-        end
 
+	def distro_name(vps_id)
+		first_line = ""
+		file = File.open("/vz/private/#{vps_id}/etc/issue")
+		file.each_line {|line| first_line = line; break }
+		file.close
+		x = first_line.split(" ")
+		dist_name = x[0]
+	end
 end
