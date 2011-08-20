@@ -1,13 +1,19 @@
+<!DOCTYPE html>
 <head>
-<title>[<%= `hostname`  %>] WebVZ: OpenVZ Management Tool</title>
-<%= stylesheet_link_tag 'webvz' %>
-<meta http-equiv="Content-Script-Type" content="text/javascript">
+<title>WebVZ: OpenVZ Management Tool @ <%= `hostname`  %>
+</title>
+<%= stylesheet_link_tag 'webvz' %>				
 </head>
-
-<body onLoad="<% if flash[:notice] %> alert ('Notice:\n\n<%= flash[:notice].gsub("\n", "\\n") %>'); <% end -%> return false;">
-<div id="logo">
-	<%= link_to image_tag("webvz-logo.png", :alt => "WebVZ logo", :width => "146", :height => "80", :border => "0"), :controller => :menu, :action => :index %>
-</div>
+<body>
+   	<div id="logo">
+                <%= link_to image_tag("webvz_small.png", :alt => "WebVZ logo", :width => "146", :height => "80", :border => "0"), :controller => :menu, :action => :index %>
+        </div>
+        <div id="header">
+	
+                <h1> OpenVZ Management Tool </h1>
+		<!--Hostname: <i> <%= `hostname`  %> </i> | IP Address: <i> <%= `hostname -i`  %> </i>-->
+		
+        </div>
 
 <div id="header">
 	<h3> OpenVZ Management Tool</h3>
@@ -41,7 +47,15 @@
 	<%= yield %> 
 </div>
 
-<div id="rights"> <p align="center"> All Rights Reserved &copy; Shuaib Zahda 2008</p> </div>
+
+	<% if flash[:notice] %>
+        <div id="notice">
+          <p><%= flash[:notice].gsub("\n", "<br />") %> <p>
+        </div>
+	<% end -%>
+
+
+	<div id="rights"> <p align="center"> All Rights Reserved &copy; Shuaib Zahda 2008</p> </div>
 
 </body>
 </html>

@@ -5,10 +5,10 @@
 
 <% for conf in @conf_names -%>
 	<tr> 
-		<td> <%= conf %> </td> <td> | </td> 
-		<td> <%= link_to "Edit", :action => :edit_conf_file , :conf_name => conf %> </td>
-		<td> | </td>
-		<td> <%= link_to "delete", {:action => :delete_conf_file , :conf_name => conf}, :confirm => "Are you sure?", :method => :post %> </td> 
+		<td> <%= conf %> </td> 
+		<td> <%= button_to "Edit", :action => :edit_conf_file , :conf_name => conf %> </td>
+		
+		<td> <%= button_to "Delete", {:action => :delete_conf_file , :conf_name => conf}, :confirm => "Are you sure?", :method => :post %> </td> 
 	</tr>
 <% end -%>
 </table>

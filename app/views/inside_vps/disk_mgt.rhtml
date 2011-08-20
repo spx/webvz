@@ -21,12 +21,18 @@
 	<td> <%= text_field "conf", "DISKINODES2", :value => v[1].gsub("\"", ""), :size => "20"%> </td>
 </tr>
 <tr>
-	<td> Quota Time </td>
-	<td> : </td>
-	<td> <%= text_field "conf", "QUOTATIME", :value => @conf_file["QUOTATIME"].gsub("\"", ""), :size => "20" unless  @conf_file["QUOTATIME"].blank?%> </td>
+
+
+        <td> Quota Time </td>
+        <td> : </td>
+        <td> <%= text_field "conf", "QUOTATIME", :value => @conf_file["QUOTATIME"].gsub("\"", ""), :size => "20" unless  @conf_file["QUOTATIME"].blank?%> </td>
+	<td> </td>
 </tr>
 <tr>
-	<td> <%= submit_tag "Edit"%> </td>
+        <td> <%= submit_tag "Edit"%> </td>
+	<td> </td>
+        <td> </td>
+	<td> </td>
 </tr>
 </table>
 <% end -%>

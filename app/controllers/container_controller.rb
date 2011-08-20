@@ -201,10 +201,11 @@ class ContainerController < ApplicationController
 		for file in files
 			@dumps << file.split("/vz/dump/")
 		end
+
 	end
 
 	def create_backup
-		msg = `vzdump --suspend #{@vps_id}`
+		msg = `vzdump --suspend --compress #{@vps_id}`
 		redirect_msg(@vps_id, "has been backed up\n"+ msg)
 	end
 		

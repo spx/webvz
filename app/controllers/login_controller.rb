@@ -5,7 +5,7 @@ class LoginController < ApplicationController
     session[:user_id] = nil
     session[:name] = nil
     session[:permission] = nil
-    #flash[:notice] = "You are logged out"
+    flash[:notice] = "You are logged out"
     redirect_to :action => :sign_in
   end
   
@@ -14,13 +14,13 @@ class LoginController < ApplicationController
     session[:permission] = nil
     if request.post?
       user = User.authunticate(params[:username], params[:password])
-      if user && user.activated == 'yes'
+      if !user.nil? && user.activated == 'yes'
         session[:user_id] = user.id
         session[:user_name] = user.username
         session[:name] = user.name
-	session[:permission] = user.authority
-        #flash[:notice] = "You are logged in"
-        redirect_to :controller => :container, :action => :list_vps
+        session[:permission] = user.authority
+        flash[:notice] = "You are logged in"
+        redirect_to :controller => :menu, :action => :index
       else 
         flash[:notice] = "Invalid username/password"
       end
