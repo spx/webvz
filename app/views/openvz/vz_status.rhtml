@@ -9,3 +9,8 @@
 <% end -%> 
 
 <h4> kernel version: <%= `uname -r` %> </h4>
+
+<h3>Bean Counters</h3>
+<pre>
+<%= `cat /proc/user_beancounters` %>
+</pre>

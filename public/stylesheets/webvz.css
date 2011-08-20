@@ -236,3 +236,6 @@ ul {
   list-style: square;
 }
 
+img {border:none;}
+
+tr {border-bottom:solid black 1px;}
