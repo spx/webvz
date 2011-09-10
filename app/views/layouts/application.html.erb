@@ -65,7 +65,7 @@ $(function($) {
             </div>
     	<% end -%>
   <div class="center_content">  
-    <% hide_from = ["menu"]%>
+    <% hide_from = ["menu","openvz"]%>
     <% unless hide_from.include?(params[:controller]) %>
         <div class="left_content">
         <% if yield(:sidebar) %>
