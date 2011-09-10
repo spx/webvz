@@ -1,4 +1,6 @@
+<% content_for :sidebar do %>
 <%= render :partial => 'links' %>
+<% end %>
 <table>
 <tr> <td> <h3> Copy OS template from this computer to another computer </h3> </td> </tr>
 	<% form_tag :action => :transfer_file, :name => @name do %>

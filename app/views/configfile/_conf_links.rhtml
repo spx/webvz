@@ -1,10 +1,5 @@
-
-<div id="sub_menu">
-<div id="menu">
-<ul>
-	<li><%= link_to "List Config files", :action => :list_conf_file %>  </li>
-	<li> <%= link_to "New Config file", :action => :new_conf_file %>  </li>
-	<li> <%= link_to "New Config (split)", :action => :split_resources%>   </li>
-</ul>
-</div>
+<div class="sidebarmenu">
+	<%= link_to("List Config files", {:action => :list_conf_file}, {:class => "menuitem_green"}) %>
+	<%= link_to("New Config file", {:action => :new_conf_file}, {:class => "menuitem_red"}) %>
+	<%= link_to("New Config (split)", {:action => :split_resources}, {:class => "menuitem_red"})%>
 </div>

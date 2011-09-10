@@ -12,6 +12,8 @@ class User < ActiveRecord::Base
   def self.authunticate(username, password)
   passwd = encrypt_password(password)
   user = self.find_by_username(username)
+  p user.password
+  p passwd
   if user
     if user.password != passwd 
       user = nil

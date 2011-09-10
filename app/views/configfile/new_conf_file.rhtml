@@ -1,8 +1,10 @@
+<% content_for :sidebar do%>
 <%= render :partial => 'conf_links' %>
+<% end %>
 <h3> Create New Configuration File </h3>
 
-<% form_tag  :action => "create_new_conf_file" do %>
-
+<% form_tag ({:action => "create_new_conf_file"},{:class=>'niceform'}) do %>
+<fieldset>
 <table>
 
 	<tr> <td> Name of the configuration file</td> <td> :  </td> <td> <%= text_field "file", "name", :size => "20"%> </td>
@@ -12,10 +14,10 @@
 
 <%= render :partial => 'conf_details' %>
 
-<tr>
-        <td> <%= submit_tag "Create Configuration File"%> </td>
-</tr>
 </table>
-
+<dl class="submit">
+  <%= submit_tag "Create Configuration File" %> 
+</dl>
+</fieldset>
 <% end %>
 

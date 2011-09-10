@@ -1,5 +1,8 @@
+<% content_for :sidebar do %>
 <%= render :partial => 'links' %>
 <%= render :partial => 'top' %>
+<% end %>
+
 <h3> Backup User's Containers </h3>
 <% form_tag :action => :create_user_backup do %>
 	<p> Choose the owner in order to backup all the containers that belong to him/her.</p>

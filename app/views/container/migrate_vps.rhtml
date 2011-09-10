@@ -1,4 +1,6 @@
+<% content_for :sidebar do %>
 <%= render :partial => 'links' %>
+<% end %>
 <h3> Virtual Environment Migration </h3>
 <% form_tag  :action => "vzmigrate", :vps_id => @vps_id do %>
 

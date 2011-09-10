@@ -1,4 +1,6 @@
+<% content_for :sidebar do %>
 <%= render :partial => 'links' %>
+<% end %>
 <h3> You have <%= pluralize(@rows.size, "#{@status} container") %> </h3>
 
 <table>

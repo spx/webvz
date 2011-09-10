@@ -1,18 +1,18 @@
+<% content_for :sidebar do %>
 <%= render :partial => 'links' %>
+<% end %>
 <h1>Editing user</h1>
 
-<% form_tag :action => 'update', :id => @user do %>
-  <table>
-
+<% form_tag({:action => 'update', :id => @user},{:class=>""}) do %>
+  <table id="rounded-corner">
 	<%= render :partial => 'editForm' %>
 	<tr>
 		<td> <%= link_to "Change Password", :action => :change_password, :id => @user.id %> </td>
 	</tr>
-	<tr>
-		<td><%= submit_tag 'Edit' %> </td>
-	</tr>
   </table>
+  <dl class="submit"><%= submit_tag 'Edit' %></dl>
+  
 <% end %>
 
-<%= link_to 'Show', :action => 'show', :id => @user %> |
-<%= link_to 'Back', :action => 'list' %>
+<%= action_button :blue, "Show", {:action => 'show', :id => @user}%>
+<%= action_button :blue, "Back", :action => 'list' %>

@@ -1,4 +1,4 @@
-<%= link_to "Backup All Containers", {:action => :backup_all_containers}, :confirm => "Are you sure you want to backup all the containers. \nCaution: This operation may take SEVERAL MINUTES." %>
-|
-<%= link_to "Backup User's Containers", :action => :backup_user_containers %>
+<div class="sidebarmenu">
+<%= sidebar_button :red, "Backup All Containers", {:action => :backup_all_containers}, :confirm => "Are you sure you want to backup all the containers. \nCaution: This operation may take SEVERAL MINUTES." %>
+<%= sidebar_button :red, "Backup User's Containers", :action => :backup_user_containers %>
 

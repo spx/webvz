@@ -1,10 +1,5 @@
-<div id="sub_menu">
-<div id="menu">
-<ul>
-        <li> <%= link_to "OS-Templates", :action => :list_templates %> </li>
-        <li> <%= link_to "Re-create Template", :action => :recreate %> </li>
-        <li> <a href="http://openvz.org/download/template/cache/" target="_blank"> Download Templates </a> </li>
-</ul>
-</div>
-
+<div class="sidebarmenu">
+    <%= link_to("OS-Templates", { :action => :list_templates} , { :class => 'menuitem_red' }) %>
+    <%= link_to("Re-create Template", {:action => :recreate}, :class => 'menuitem_green') %> 
+    <a class="menuitem" href="http://openvz.org/download/template/cache/" target="_blank"> Download Templates [external] </a>
 </div>

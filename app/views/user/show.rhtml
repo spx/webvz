@@ -1,5 +1,7 @@
+<% content_for :sidebar do %>
 <%= render :partial => 'links' %>
-<table>
+<% end %>
+<table id="rounded-corner">
 <% for column in User.content_columns %>
 <tr>
   <td><%= column.human_name %><td> 
@@ -9,5 +11,7 @@
 <% end %>
 </table>
 
-<%= link_to 'Edit', :action => 'edit', :id => @user %> |
-<%= link_to 'Back', :action => 'list' %>
+
+<%= blue_button 'Edit', :action => 'edit', :id => @user %> |
+<%= blue_button 'Back', :action => 'list' %>
+

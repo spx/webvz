@@ -1,4 +1,6 @@
+<% content_for :sidebar do %>
 <%= render :partial => 'links' %>
+<% end %>
 <table>
 <tr> <td> <h3> Create New Customized Template </h3> </td> </tr>
 	<% form_tag :action => :make_new_template, :vps_id => @vps_id do %>

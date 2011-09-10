@@ -1,11 +1,6 @@
-<div id="sub_menu">
-<div id="menu">
-<ul>
-	<li> <%= link_to "List Users", :action => :list %> </li>
-	<li> <%= link_to "Activated Users", :action => :activated %>  </li>
-	<li> <%= link_to "Deactivated Users", :action => :deactivated %> </li>
-	<li> <%= link_to "New User", :action => :new %> </li>
-</ul>
-
-</div>
+<div class="sidebarmenu">
+<%= sidebar_button :blue, "List Users", {:action => :list} %>
+<%= sidebar_button :red, "Activated Users", {:action => :activated} %> 
+<%= sidebar_button :red, "Deactivated Users", {:action => :deactivated} %>
+<%= sidebar_button :red, "New User", {:action => :new} %>
 </div>

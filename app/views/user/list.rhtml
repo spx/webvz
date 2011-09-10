@@ -1,7 +1,9 @@
+<% content_for :sidebar do %>
 <%= render :partial => 'links' %>
+<% end %>
 <h2>User list</h2>
 
-<table>
+<table id="rounded-corner">
   <tr>
   <%# for column in User.content_columns %>
     <th>Name</th>
