@@ -175,13 +175,13 @@ class InsideVpsController < ApplicationController
 #Private Methods start here
 private
   def distro_name(vps_id)
-                first_line = ""
-                file = File.open("/vz/private/#{vps_id}/etc/issue")
-                file.each_line {|line| first_line = line; break }
-                file.close
-                x = first_line.split(" ")
-                dist_name = x[0]
-        end
+    first_line = ""
+    file = File.open("/vz/private/#{vps_id}/etc/issue")
+    file.each_line {|line| first_line = line; break }
+    file.close
+    x = first_line.split(" ")
+    dist_name = x[0]
+  end
 
   def get_conf
     @conf = params[:conf]
@@ -189,7 +189,7 @@ private
   
   def read_conf
     cnf = Vps.new
-                @conf_file = cnf.read_conf_file(@vps_id)
+    @conf_file = cnf.read_conf_file(@vps_id)
   end
   
   def write_conf(output, to_action)
