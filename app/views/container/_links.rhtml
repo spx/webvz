@@ -1,14 +1,9 @@
-<div id="sub_menu">
-<div id="menu">
-<ul>
-	<li> <%= sidebar_button :blue, "All Containers", :action => :list_vps, :status=> "all" %> </li>
-	<li> <%= sidebar_button :blue, "Running Containers", :action => :list_vps, :status=> "running"%>  </li>
-	<li> <%= sidebar_button :blue, "Stopped Containers", :action => :list_vps, :status=> "stopped"%> </li>
+<div class="sidebarmenu">
+<%= sidebar_button :blue, "All Containers", :action => :list_vps, :status=> "all" %>
+<%= sidebar_button :blue, "Running Containers", :action => :list_vps, :status=> "running"%> 
+<%= sidebar_button :blue, "Stopped Containers", :action => :list_vps, :status=> "stopped"%>
 	<% if session[:permission] == "admin" %>
-		<li> <%= sidebar_button :blue, "Backups", :action => :backups %> </li>
-		<li> <%= sidebar_button :blue, "New Container", :action => :new_vps %> </li>
+	<%= sidebar_button :blue, "Backups", :action => :backups %>
+	<%= sidebar_button :blue, "New Container", :action => :new_vps %>
 	<% end %>
-</ul>
-
-</div>
 </div>
