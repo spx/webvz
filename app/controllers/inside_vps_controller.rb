@@ -6,6 +6,7 @@ class InsideVpsController < ApplicationController
   before_filter :get_conf, :except => [:run_command, :execute_cmd, :view_vps, :booting, :basic_net, :adv_net, :disk_mgt, :cpu_mgt, :memory_mgt, :misc, :monitor_resources, :running_processes, :services, :start_service, :stop_service, :restart_service]
   before_filter :read_conf, :except => [:run_command, :execute_cmd, :view_vps]
   
+  
   def start_service
     name = params[:ser_name]
     out = `vzctl exec #{@vps_id} /etc/init.d/#{name} start`
