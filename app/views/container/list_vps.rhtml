@@ -28,7 +28,6 @@
   
   <tr id="<%= "color"+i.to_s %>">
 
-  <td colspan="2"> </td>
   <% if row[2].include?("running") %>
     <td><%= button_to "stop", :action => :stop_vps, :vps_id => row[0] %></td>
     <td> <%= button_to "restart" , :action => :restart_vps, :vps_id => row[0] %> </td> 
