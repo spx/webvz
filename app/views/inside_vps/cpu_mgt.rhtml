@@ -1,5 +1,6 @@
 <%= render :partial => 'links' %>
 <% if @conf_file['CPUUNITS'].nil?; @conf_file['CPUUNITS']="\""; end %>
+<% if @conf_file['NUMPROC'].nil?; @conf_file['NUMPROC']=" : "; end %>
 <div id="details_block">
 
 <h3> CPU Management</h3>
