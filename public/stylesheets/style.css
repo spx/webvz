@@ -458,3 +458,5 @@ margin-right: 2px;
 border: 1px solid #f3f3f3;
 color: #ccc;
 }
+
+pre { overflow: auto; }
