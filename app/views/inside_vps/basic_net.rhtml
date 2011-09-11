@@ -3,7 +3,7 @@
 <div id="details_block">
 <h3> Basic Network Configuration </h3>
 
-<table>
+<table id="rounded-corner">
 <% form_tag({:action => "edit_hostname", :vps_id => @vps_id},{:class=>'niceform'}) do %>
 <tr>
         <td> Hostname </td> <td> : </td> 
@@ -21,7 +21,7 @@
 </table> 
 <br>
 
-<table>
+<table id="rounded-corner">
 <tr>
         <td> IP Address(es) </td>
 </tr> 
