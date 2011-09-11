@@ -52,9 +52,17 @@ $(function($) {
 	<div class="header">
     <div class="logo"><a href="#"><%= image_tag "logo.gif" %></a></div>
     
-    <div class="right_header">Welcome Admin, <a href="#">Visit site</a> | <a href="#" class="messages">(3) Messages</a> | <a href="#" class="logout">Logout</a></div>
-    <div class="jclock"></div>
-    </div>
+    <% if session[:user_name] %>
+      
+    <div class="right_header">Welcome 
+      <%= "<strong>#{session[:user_name]}</strong>" %>
+     <%= link_to("<span> Logout</span>", 
+      { :controller => :login, :action => :logout}, {:class=>'logout'}) %>
+     </div>
+     
+    <% end %>
+        <div class="jclock"></div>
+      </div>
     
     
     <div class="main_content">

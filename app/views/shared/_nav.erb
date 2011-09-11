@@ -15,8 +15,5 @@
   <%if session[:permission] == nil -%>
   	<li> <%= link_to "<span> Login </span>", :controller => :login, :action => :sign_in %> </li>
   <% end -%>
-  <% if session[:user_name] %>
-  	<li> <%= link_to "<span> Logout (#{session[:user_name]})</span>", :controller => :login, :action => :logout%> </li>
-  <% end %>
   </ul>
 </div>
