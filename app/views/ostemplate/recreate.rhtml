@@ -20,7 +20,10 @@
 	<td> <%=row[2]%> </td>
 	<td> <%=row[3]%><br/>
 	   <%=row[4]%> </td>
-	<td> <%= link_to "re-create OS-template", :action => :recreate_template, :vps_id => row[0] %> </td>	
+	<td> 
+	<%= link_to "re-create", :action => :recreate_template, :vps_id => row[0] %><br/>
+	<%= link_to "OS-template", :action => :recreate_template, :vps_id => row[0] %> 
+	  </td>	
 </tr>
 <% end -%>
 
