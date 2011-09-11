@@ -3,13 +3,14 @@
 <div id="details_block">
 <h3> User Bean Counter for <%= @vps_id %> </h3>
 <table id="rounded-corner">
-<th> Resource </th> <th> Held </td> <th> Max held </th>  <th> Barrier </th> <th> Limit </th> <th> Failcnt </th>
+<th> Resource </th> <th> Held </td> <th> Max held </th>  
+<th> Barrier </th> <th> Limit </th> <th> Failcnt </th>
 <% for entry in @ubc -%>
 	<% values = entry.split(" ") %>
 	<% if values[5].to_i.zero? %>
-	<tr>
+  	<tr>
 	<% else %>
-	<tr bgcolor="red">
+  	<tr bgcolor="red">
 	<% end %>
 		<td> <%= values[0] %> </td> 
 		<td> <%= values[1] %> </td>
