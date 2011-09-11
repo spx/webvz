@@ -199,11 +199,12 @@ float:left;
 padding:30px 0 0 20px;
 }
 .right_content{
-width:670px;
 float:left;
 padding:10px 0 0 10px;
 }
-
+.right_content > .left_content {
+  width:670px;
+}
 .sidebarmenu{
 margin:0px 0;
 padding:0;
