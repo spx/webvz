@@ -5,9 +5,9 @@
 
 <h3> CPU Management</h3>
 
-<% form_tag  :action => "edit_cpu_mgt", :vps_id => @vps_id do %>
+<% form_tag({:action => "edit_cpu_mgt", :vps_id => @vps_id},{:class=>'niceform'}) do %>
 
-<table>
+<table id="rounded-border">
 <th> Parameter </th> <th> </th><th> Value </th>
 
 <tr>
