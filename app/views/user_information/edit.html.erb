@@ -1,7 +1,7 @@
 <h1>Editing Your Personal Information</h1>
 
 <% form_tag :action => 'update', :id => @user do %>
-  <table>
+  <table id="rounded-corner">
 	<%= render :partial => 'form' %>
   <tr>
 	<td><%= link_to "Change Password", :action => :change_password, :id => @user.id %> </td>

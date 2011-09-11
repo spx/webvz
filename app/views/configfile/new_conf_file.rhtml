@@ -5,7 +5,7 @@
 
 <% form_tag ({:action => "create_new_conf_file"},{:class=>'niceform'}) do %>
 <fieldset>
-<table>
+<table id="rounded-corner">
 
 	<tr> <td> Name of the configuration file</td> <td> :  </td> <td> <%= text_field "file", "name", :size => "20"%> </td>
 	<td> note: space is not allowed </td>

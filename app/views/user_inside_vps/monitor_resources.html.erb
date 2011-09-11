@@ -3,7 +3,7 @@
 
 <h3> User Bean Counters for <%= @vps_id %> </h3>
 <h6>Notice: The fail counter will only reset to 0 when the VM is restarted</h6>
-<table>
+<table id="rounded-corner">
 <th> Resource </th> <th> Held </td> <th> Max held </th>  <th> Barrier </th> <th> Limit </th> <th> Failcnt </th>
 <% for entry in @ubc -%>
 	<% values = entry.split(" ") %>
@@ -20,5 +20,5 @@
 		<td> <%= values[5] %> </td>
 	</tr>
 <% end -%>
-<table>
+<table id="rounded-corner">
 </div>

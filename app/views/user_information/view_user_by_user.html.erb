@@ -3,7 +3,7 @@
 	<%= link_to "Edit profile", :action => :edit , :id => @user.id %> |  
 	<%= link_to "Change Password", :action => :change_password, :id => @user.id %> 
 </p>
-<table>
+<table id="rounded-corner">
 	<tr>
 		<td> Username </td> <td> : </td> <td> <%= @user.username %> </td>
 	</tr>

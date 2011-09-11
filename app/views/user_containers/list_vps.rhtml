@@ -1,7 +1,7 @@
 <%= render :partial => 'links' %>
 <h3> <%= session[:name] %>, You have <%= pluralize(@rows.size, "container") %> </h3>
 
-<table>
+<table id="rounded-corner">
 <th> Distribution</th> <th> Container ID </th> <th> Name </th> <th> No. Processes </th> <th> Status </th> <th> IP Address </th> <th> Hostname </th>
 <% i = 1 %>
 <% z = 0 %>
