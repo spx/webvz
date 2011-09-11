@@ -38,7 +38,7 @@
 			<td> <%= button_to "migrate", :action => :migrate_vps, :vps_id => row[0] %> </td>
 			<td> <%= button_to "create backup", :action => :create_backup, :vps_id => row[0] %> </td>
 		<!-- <% end %> -->
-	<td>  Owner:
+	<td>
   		<% vps = Vps.find_by_cnt_id(row[0]) %>
   		<% if vps %>
   			<%= link_to vps.user.name, :action => :vpses_of_user, :user_id => vps.user.id %> 
@@ -46,7 +46,7 @@
   			<%= link_to "Assign to Owner", :action => :assign_to_owner, :vps_id =>row[0] %> 
   		<% end %>
   		<br/>
-	<%= button_to "Change Owner", :action => :assign_to_owner, :vps_id =>row[0] %> </td>
+	<% button_to "Change Owner", :action => :assign_to_owner, :vps_id =>row[0] %> </td>
 	</tr>
 <% end -%>
 
