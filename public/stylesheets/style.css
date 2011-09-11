@@ -203,7 +203,7 @@ padding:30px 0 0 20px;
 float:left;
 padding:10px 0 0 10px;
 }
-.right_content > .left_content {
+.left_content + .right_content {
   width:670px;
 }
 .sidebarmenu{
