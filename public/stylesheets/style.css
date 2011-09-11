@@ -199,9 +199,9 @@ float:left;
 padding:30px 0 0 20px;
 }
 .right_content{
-width:625px;
+width:665px;
 float:left;
-padding:30px 0 0 30px;
+padding:10px 0 0 10px;
 }
 
 .sidebarmenu{
@@ -461,4 +461,4 @@ border: 1px solid #f3f3f3;
 color: #ccc;
 }
 
-pre { overflow: auto; }
+pre { overflow: auto; display: block; clear: both; width: 100%;}
