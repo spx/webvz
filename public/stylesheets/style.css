@@ -199,7 +199,7 @@ float:left;
 padding:30px 0 0 20px;
 }
 .right_content{
-width:665px;
+width:670px;
 float:left;
 padding:10px 0 0 10px;
 }
@@ -287,6 +287,7 @@ margin:7px 0 0 8px;
 {
 margin:0px;
 width:625px;
+width:100%;
 text-align: left;
 border-collapse: collapse;
 }
