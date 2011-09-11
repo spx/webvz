@@ -7,9 +7,9 @@
 <table>
 <th> Parameter </th> <th> </th><th> Barrier </th> <th> limit</th>
 
-<% if @conf_file['DISKSPACE'].nil?; @conf_file['DISKSPACE']=":"; end %>
-<% if @conf_file['DISKINODES'].nil?; @conf_file['DISKINODES']=":"; end %>
-<% if @conf_file['QUOTATIME'].nil?; @conf_file['QUOTATIME']=""; end %>
+<% if @conf_file['DISKSPACE'].nil?; @conf_file['DISKSPACE']=" : "; end %>
+<% if @conf_file['DISKINODES'].nil?; @conf_file['DISKINODES']=" : "; end %>
+<% if @conf_file['QUOTATIME'].nil?; @conf_file['QUOTATIME']="\"""; end %>
   <tr>
     <td> Disk Space (KByte) </td>
     <td> : </td>
