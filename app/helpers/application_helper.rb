@@ -14,5 +14,14 @@ module ApplicationHelper
     end
     link_to title, params, options
   end
+  
+  def dl_submit(title,*args)
+    content_tag(:dl,submit_tag(title,*args)) 
+  end
+  
+  def row_to_td(*args)
+    row = args.collect { |v| "<td>#{v}</td>" }
+    "<tr>#{row.join("\n")}</tr>"
+  end
 
 end

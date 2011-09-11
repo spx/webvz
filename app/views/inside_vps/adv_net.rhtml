@@ -3,7 +3,7 @@
 <div id="details_block">
 <h3> Advanced Network Configuration </h3>
 
-<% form_tag  :action => "edit_adv_net", :vps_id => @vps_id do %>
+<% form_tag({:action => "edit_adv_net", :vps_id => @vps_id},{:class=>'niceform'}) do %>
 
 <table>
 <th> Parameter </th> <th> </th><th> Barrier </th> <th> limit</th>
@@ -50,9 +50,7 @@
 	<td> <%= text_field "conf", "NUMOTHERSOCK1", :value => v[0].gsub("\"", ""), :size => "20"%> </td>
 	<td> <%= text_field "conf", "NUMOTHERSOCK2", :value => v[1].gsub("\"", ""), :size => "20"%> </td>
 </tr>
-<tr> 
-	<td> <%= submit_tag "Edit"%> </td>
-</tr>
+  <%= dl_submit "Edit" %>
 </table>
 
 <% end %>

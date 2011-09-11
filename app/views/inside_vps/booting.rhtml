@@ -4,7 +4,7 @@
 <div id="details_block">
 <table>
 
-<% form_tag :action => :edit_booting, :vps_id => @vps_id do %>
+<% form_tag({:action => :edit_booting, :vps_id => @vps_id},{:class=>'niceform'}) do %>
 <tr>
 <td> Enable booting on startup </td> <td> : </td>
 	<td>
@@ -17,9 +17,7 @@
 	<% end %>
 	</td>
 </tr>
-<tr>
-	<td> <%= submit_tag "Change" %> </td>
-</tr>
+<dl><%= submit_tag "Change" %></dl>
 <% end -%>
 
 </table>
