@@ -28,8 +28,9 @@ color:#256c89;
 font-weight:normal;
 padding:15px 0 5px 20px;
 margin:0px;
-float:left;
+/*float:left;
 clear:both;
+width: ;*/
 }
 a.forgot_pass{
 float:right;
