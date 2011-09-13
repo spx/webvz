@@ -1,43 +1,51 @@
 h1. WebVZ: OpenVZ Web Management Tool
 
-h2. WebVZ 2.0 Features
+Download
 
-# Create containers.
-# Start, Stop, Restart, and Destroy containers.
-# Migrate containers from Host Node to another Host Node.
-# Create and Manage configuration files.
-# Change the configuration of the containers on the fly.
-# Start, Stop, and Restart OpenVZ service.
-# Execute Commands inside the running containers and display the output on the same page.
-# list the stopped containers, the running containers and/or all of them.
-# Assign a name for each container.
-# User Accesss Module.
-# Add/delete multiple IP Addresses
-# Monitor container's resources (user_beancounter) and highlight the over used resource.
-# Assign root password.
-# Enable/Disable booting of the container.
-# Manage Operating System Templates (delete, download and copy).
-# Recreate a customized OS-Template from an existing container.
-# Copy OS-Template from a machine to another
-# Backup all containers
-# Backup all client's containers
-# Backup a specific container
-# restore containers
-# Access Control Level
-# Client can stop, start and restart his/her container
-# Client can run commands, observe, and monitor the containers
-# Ownership of containers
-# admin and client users
-# Security enforcement on who access what
+WebVZ latest version is available for download here.
+Requirements befor installation
+WebVZ needs Ruby on Rails to be installed on the server. Ruby on Rails installation instructions are available here.
+After installing Ruby on Rails you need to install SQLITE3 using this command gem install sqlite3-ruby. If you have SQLITE preinstalled on your server skip this step.
+After Ruby on Rails installation is done. What left to fire up WebVZ is simple.
+Installation
 
-Developer: Shuaib Zahda from Palestine
-Email: "shuaib.zahda@gmail.com":shuaib.zahda@gmail.com
-Email: "webvz.info@gmail.com":webvz.info@gmail.com
-"http://webvz.sourceforge.net/":WebVZ Official website
-"http://groups.google.com/group/webvz":WebVZ Google Group
+1. Extract Webvz.x.x.tar.gz (x.x is the version) to any directory.
+2. Run the terminal and change to WebVZ.x.x directory.
+3. on the terminal type: ruby script/server
 
-The containers' logos were borrowed from EasyVZ.
+This command will run WEBrick server which is a light server and comes with ROR. 
+By default if you are running this application for the first time on the machine 
+WEBrick will run WebVZ on port 3000. if you want to change the port number it is 
+easy type in the terminal "ruby script/server --port 5678" 5678 can be changed to 
+any number above 1024 which is not used by your server.
 
-Special Thanks to Leila Daniel from Quantum Beez Sdn Bhd for the logo.
+4. Fire up Firefox and type "http://ip_address:portnumber" for example if the 
+server has the ip_address 10.20.30.40 and the port number is 3000 then the 
+address is http://10.20.30.40:3000
 
-All Rights Reserved © Shuaib Zahda 2008
+if you are running webvz on the same machine you can use localhost instead of 
+the ip_address.
+
+Note: WebVZ was developed under Centos 5 environment and tested on 
+Centos 5 and Fedora 8. However, other environments are expected to run 
+WebVZ with no problem on RedHat like distros.
+
+Login information
+
+WebVZ has a precreated administrator user in order to perform all the operations
+
+Username: admin
+Password: admin123
+
+After you install and login to WebVZ. It is advised to create a new user and delete the admin user.
+Error
+
+There might appear an error when you first start WebVZ which looks like the figure below. The error says that you do not have sqlite3 installed in your machine
+Solution
+
+To solve the problem you simply execute this command in the shell: gem install sqlite3-ruby 
+
+For debian users please visit http://www.howtoforge.com/managing-openvz-with-webvz-on-debian-etch
+
+
+
